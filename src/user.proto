@@ -10,16 +10,23 @@ package user;
 // The greeting service definition.
 service User {
   // Sends a greeting
+  rpc deleteUser (UserRequest) returns (UserReply) {}
   rpc createUser (UserRequest) returns (UserReply) {}
-  rpc updateUser (UpdateRequest) returns (UserReply) {}
+  rpc updateUser (UpdateUser) returns (UserReply) {}
   rpc getUser (UserRequest) returns (UserReply) {}
+  rpc getAllUsers (AllUsesRequest) returns (UserReply) {}
 }
 
-message UpdateRequest {
-  string email = 1;
-  string name = 2;
-  repeated string friends = 3;
-  repeated string lists = 4;
+message UpdateFriendsRequest {
+  string _id = 1;
+  string friends = 2;
+}
+
+message AllUsesRequest {}
+message UpdateUser {
+  string _id = 1;
+  string friends = 2;
+  string lists = 3;
 }
 // The request message containing the user's name.
 message UserRequest {

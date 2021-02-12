@@ -9,5 +9,8 @@
     "lodash": "^4.6.1",
     "minimist": "^1.2.0",
     "mongoose": "^5.11.15"
+  },
+  "scripts":{
+    "prettier":"npx prettier -w */*.js"
   }
 }
